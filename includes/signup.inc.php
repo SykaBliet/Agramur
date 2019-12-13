@@ -8,7 +8,7 @@ if (isset($_POST['signup-submit'])) {
 
     require 'dbh.inc.php';
 
-    //fetch info quand user se s'inscrit
+    //fetch info quand user s'inscrit
 
     $username = $_POST['uid'];
     $email = $_POST['mail'];
@@ -17,14 +17,12 @@ if (isset($_POST['signup-submit'])) {
 
     // error handlers
 
-    if (empty($username) || empty($email) || empty($password)
-     || empty($passwordRepeat)) {
+    if (empty($username) || empty($email) || empty($password) || empty($passwordRepeat)) {
         header("Location: ../signup.php?error=emptyfiels&uid=".$username."&mail=".$email);
         exit();
     }
-    //
-    elseif (!filter_var($email, FILTER_VALIDATE_EMAIL) && preg_match("/^[a-zA-Z0-9]*$", $username)) {
-        header("Location: ../signup.php?error=invalidmail&uid");
+    elseif (!filter_var($email, FILTER_VALIDATE_EMAIL) && !preg_match("/^$[a-zA-Z0-9]*$/", $username)) {
+        header("Location: ../signup.php?error=invalidmail&uid=");
         exit();
     }
     //fonction si email valide
@@ -46,7 +44,6 @@ if (isset($_POST['signup-submit'])) {
     else {
         $sql = "SELECT uidUsers FROM users WHERE uidUsers=?";
         $statment = mysqli_stmt_init($connection); //
-        
         if (!mysqli_stmt_prepare($statment, $sql)) {
             header("Location: ../signup.php?error=sqlerror");
             exit();
@@ -70,11 +67,12 @@ if (isset($_POST['signup-submit'])) {
                 else {
                     //cryptage du pwd en "hashing" avec Becrypt
                     $hashedPwd = password_hash($password, PASSWORD_DEFAULT);
-
-                    mysqli_stmt_bind_param($statment, "sss", $username, $email, $hashedPwd);
+                    
+                    mysqli_stmt_bind_param($statment, "sss", $username, $email, $hashedPwd); //prendre info du user 
                     mysqli_stmt_execute($statment);
-                    mysqli_stmt_store_result($statment);
-                    header("Location: ../signup.php?signup=success");
+                    // mysqli_stmt_store_result($statment);
+
+                    header("Location: ../index.php?signup=success");
                     exit();
                 }
             }

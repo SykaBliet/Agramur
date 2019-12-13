@@ -9,33 +9,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Dosis|Lato|Montserrat|Oswald|Roboto|Sulphur+Point&display=swap" rel="stylesheet">
+    <title></title>
 </head>
 <body>
     <header>
-    <div class="container">
-        <a href="#">
-            <img src="img/logo.png" alt="logo">
-        </a>
-        <ul>
-            <li><a href="index.php">Home</a></li>
-            <li><a href="#">Profil</a></li>
-            <li><a href="#">Gallery</a></li>
-            <li><a href="#">Contact</a></li>
+    <nav class="nav-bar">
+        <ul class="ul-navbar">
+            <a class="logo" href="index.php"><img class="logo-img1" src="img/logo-img1.png" alt="logo"></a>
+            <li class="li-navbar"><a href="#"></a>Profil</li>
+            <li class="li-navbar"><a href="#"></a>Post Image</li>
+            <li class="li-navbar"><a href="#"></a>Contact</li>
         </ul>
-        <div class="form-login">
-            <?php
-                
-            ?>
-            <form action="includes/login.inc.php" method="post">
-                <input type="text" name="mailuid" placeholder="Username/E-mail...">
-                <input type="password" name="pwd" placeholder="Password">
-                <button type="submit" name="login-submit">Login</button>
-            </form>
-            <a href="signup.php">Signup</a>
-            <form action="includes/logout.inc.php" method="post">
-                <button type="submit" name="logout-submit">Logout</button>
-            </form>
-        </div>
-    </div>
+        <?php
+            if (isset($_SESSION['userId'])) {
+                echo '<form action="includes/logout.inc.php" method="post">
+                    <button href="index.php" type="submit" name="logout-submit">Logout</button>
+                    <a href="login.php" type="submit" name="logout-submit">Logout</a>
+                </form>';
+            }
+        ?>
+            <!-- mettre post pour cacher l'info sur l'url -->  
+    </nav>
 </header

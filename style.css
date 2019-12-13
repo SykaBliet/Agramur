@@ -1,0 +1,152 @@
+/* -------------------- PAGE HEADER -------------------- */
+
+body {
+    background-image: url(img/website-background.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #464646;
+    font-family: 'Sulphur Point', sans-serif;
+    margin: 0;
+}
+
+.nav-bar {
+    max-width: 100%;
+}
+
+.logo-img1 {
+    max-width: 50px;
+    max-height: 50px;
+    display: inline-block;
+    position: relative;
+}
+
+.logo {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.ul-navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: rgba(50, 82, 77, 0.541);
+}
+
+.li-navbar {
+    float: left;
+}
+
+.li-navbar {
+    position: relative;
+    font-size: 24px;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 18px 16px;
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.login-title {
+    text-align: center;
+    font-size: 42px;
+    top: 0;
+}
+
+.container-login-form {
+    position: relative;
+    margin: 11% auto;
+    height: 450px;
+    width: 400px;
+    background: rgba(238, 234, 234, 0.329);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+}
+ .form-login {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    padding: 10px 30px 10px 30px;
+    height: 450px;
+    width: 400px;
+    color: rgba(50, 82, 77, 0.822);
+ }
+
+ input[type="text"],input[type="password"] {
+    display: block;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    padding: 8px;
+    padding-left: 15px;
+    width: 80%;
+    height: 38px;
+    border: none;
+    outline: none;
+    border-left: 4px solid rgba(50, 82, 77, 0.541);
+    font-weight: 400;
+    font-size: 15px;
+    transition: 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.904);
+    color: rgba(50, 82, 77, 0.842);
+    margin-top: 10px;
+    margin-left: 35px;
+    border-radius: 25px;
+}
+
+ .login-button {
+    text-align: center;
+    display: block;
+    border-radius: 25px;
+    border-color: white;
+    background-color:  rgba(238, 234, 234, 0.205);
+    padding: 10px 25px;
+    margin-left: 124px;
+    font-family: 'Sulphur Point', sans-serif;
+    font-size: 16px;
+    margin-top: 30px;
+    letter-spacing: 1.1px;
+    cursor: pointer;
+    /* box-shadow: 10px; */
+ }
+
+.signup-block {
+    text-align: center;
+}
+
+.signup-p {
+    display: inline-block;
+}
+
+.signup-button {
+    display: inline-block;
+    color: rgba(50, 82, 77, 0.541);
+    text-align: center;
+}
+
+/* ----------------- Page signup.php --------------- */
+
+.container-login-form2 {
+    position: relative;
+    margin: 11% auto;
+    height: 500px;
+    width: 400px;
+    background: rgba(238, 234, 234, 0.329);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+}

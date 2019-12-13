@@ -1,18 +1,17 @@
-
-<!-- <?php
-if (!(isset($_SESSION['submit-login']))) {
-    // Si connecter login require header
-    require "login.php";
-    // require 'dbh.inc.php';
-}
-// else {
-//     require "require"
-// } -->
+<?php
+    session_start();
 ?>
     <main>
-        
+        <?php
+        if (isset($_SESSION['userId'])) {
+            header("Location: home.php");
+        }
+        else {
+            header("Location: login.php");
+        }
+        ?>
     </main>
 
-    <?php
-        require "footer.php";
-    ?>
+<?php
+    require "footer.php";
+?>

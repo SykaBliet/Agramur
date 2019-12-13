@@ -7,14 +7,14 @@ if (isset($_POST['login-submit'])) {
     $password = $_POST['pwd'];
 
     if (empty($mailuid) || empty($password)) {
-        header("Location: ../index.php?error=emptyfields");
+        header("Location: ../login.php?error=emptyfields");
         exit();
     }
     else {//recherche si l'uidUsers ou email est dans la DB
         $sql = "SELECT * FROM users WHERE uidUsers=? OR emailUsers=?";
         $statment = mysqli_stmt_init($connection); //
         if (!mysqli_stmt_prepare($statment, $sql)) { // run sql string dans DB et check si c'est les memes infos.
-            header("Location: ../index.php?error=sqlerror");
+            header("Location: ../login.php?error=sqlerror");
             exit();
         }
         else {
@@ -24,7 +24,7 @@ if (isset($_POST['login-submit'])) {
             if ($row = mysqli_fetch_assoc($result)){ //check si on a eu qq chose de la db
                 $pwdCheck = password_verify($password, $row['pwdUsers']); //return 0 ou 1 //voir si le
                 if ($pwdCheck == false) {
-                    header("Location: ../index.php?error=wrongpwd");
+                    header("Location: ../login.php?error=wrongpwd");
                     exit();
                 }
                 else if ($pwdCheck == true) {
@@ -32,11 +32,11 @@ if (isset($_POST['login-submit'])) {
                     $_SESSION['userId'] = $row['idUsers']; //$_SESSION global d'env.
                     $_SESSION['userUid'] = $row['uidUsers']; // $_SESSION global d'env.
                     
-                    header("Location: ../index.php?login=success");
+                    header("Location: ../home.php?login=success");
                     exit();
                 }
                 else { //aucun match
-                header("Location: ../index.php?error=wrongpwd");
+                header("Location: ../login.php?error=wrongpwd");
                 exit();
                 }
             }

@@ -14,6 +14,31 @@
             <section class="container-login-form2">
                 <form class="form-login" action="includes/signup.inc.php" method="post">
                     <h1 class="login-title">Sign Up</h1>
+                    <?php
+                    if (isset($_GET['error'])) {
+                        if ($_GET['error'] == "emptyfields") {
+                            echo '<p class="signup-error-msg">Fill in all fields</p>';
+                        }
+                        elseif ($_GET["error"] == "invaliduidmail") {
+                            echo '<p class="signup-error-msg">Invalid username and e-mail</p>'; 
+                        }
+                        elseif ($_GET["error"] == "invalidmail") {
+                            echo '<p class="signup-error-msg">Invalid e-mail</p>'; 
+                        }
+                        elseif ($_GET["error"] == "invaliduid") {
+                            echo '<p class="signup-error-msg">Invalid username</p>'; 
+                        }
+                        elseif ($_GET["error"] == "passwordcheckfail") {
+                            echo '<p class="signup-error-msg">Your passwords dont match</p>'; 
+                        }
+                        elseif ($_GET["error"] == "usertaken") {
+                            echo '<p class="signup-error-msg">Username is already taken</p>'; 
+                        }
+                    }
+                    elseif (isset($_GET["signup"]) == "success") {
+                        echo '<p class="signup-succes-msg">Sign up successful</p>'; 
+                    }
+                    ?>
                     <input type="text" name="uid" placeholder="Username">
                     <input type="text" name="mail" placeholder="E-mail">
                     <input type="password" name="pwd" placeholder="Password">

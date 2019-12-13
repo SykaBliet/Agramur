@@ -7,7 +7,7 @@ if (isset($_POST['login-submit'])) {
     $password = $_POST['pwd'];
 
     if (empty($mailuid) || empty($password)) {
-        header("Location : ../index.php?error=emptyfields");
+        header("Location: ../index.php?error=emptyfields");
         exit();
     }
     else {//recherche si l'uidUsers ou email est dans la DB

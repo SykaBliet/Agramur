@@ -40,10 +40,6 @@ body {
 }
 
 .li-navbar {
-    float: left;
-}
-
-.li-navbar {
     position: relative;
     font-size: 24px;
     display: block;
@@ -51,6 +47,18 @@ body {
     text-align: center;
     padding: 18px 16px;
     text-decoration: none;
+    float: left;
+}
+
+.li-navbar-logout {
+    position: relative;
+    font-size: 24px;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 18px 16px;
+    text-decoration: none;
+    float: right;
 }
 
 a {
@@ -149,4 +157,16 @@ a {
     background: rgba(238, 234, 234, 0.329);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
     border-radius: 10px;
+}
+
+/* ------------------ Error msg Signup ------------------ */
+
+.signup-error-msg {
+    text-align: center;
+    color: red;
+}
+
+.signup-success-msg {
+    text-align: center;
+    color: green;
 }

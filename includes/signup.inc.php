@@ -18,11 +18,11 @@ if (isset($_POST['signup-submit'])) {
     // error handlers
 
     if (empty($username) || empty($email) || empty($password) || empty($passwordRepeat)) {
-        header("Location: ../signup.php?error=emptyfiels&uid=".$username."&mail=".$email);
+        header("Location: ../signup.php?error=emptyfields&uid=".$username."&mail=".$email);
         exit();
     }
     elseif (!filter_var($email, FILTER_VALIDATE_EMAIL) && !preg_match("/^$[a-zA-Z0-9]*$/", $username)) {
-        header("Location: ../signup.php?error=invalidmail&uid=");
+        header("Location: ../signup.php?error=invaliduidmail=");
         exit();
     }
     //fonction si email valide

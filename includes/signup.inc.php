@@ -1,5 +1,12 @@
 <?php
 
+ini_set('display_errors', 1);
+$localhost = 'http://localhost:8888';
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
 //protection contre l'acces direct au signup
 
 if (isset($_POST['signup-submit'])) {
@@ -58,7 +65,7 @@ if (isset($_POST['signup-submit'])) {
                 exit();
             }
             else { //Insertion des infos tapper dans mysql
-                $sql = "INSERT INTO users (uidUsers, emailUsers, pwdUsers) VALUES (?, ?, ?)";
+                $sql = "INSERT INTO users (uidUsers, emailUsers, pwdUsers, token) VALUES (?, ?, ?, ?)";
                 $statment = mysqli_stmt_init($connection); //
                 if (!mysqli_stmt_prepare($statment, $sql)) {
                     header("Location: ../signup.php?error=sqlerror");
@@ -67,12 +74,40 @@ if (isset($_POST['signup-submit'])) {
                 else {
                     //cryptage du pwd en "hashing" avec Becrypt
                     $hashedPwd = password_hash($password, PASSWORD_DEFAULT);
+                    $token = md5(uniqid(rand(), true));
                     
-                    mysqli_stmt_bind_param($statment, "sss", $username, $email, $hashedPwd); //prendre info du user 
+                    mysqli_stmt_bind_param($statment, "ssss", $username, $email, $hashedPwd, $token); //prendre info du user 
                     mysqli_stmt_execute($statment);
                     // mysqli_stmt_store_result($statment);
 
-                    header("Location: ../index.php?signup=success");
+                                        
+                    include_once 'PHPMailer/PHPMailer.php';
+                    include_once 'PHPMailer/SMTP.php';
+                    include_once 'PHPMailer/Exception.php';
+
+                    $mail = new PHPMailer(true);
+                    $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      // Enable verbose debug output
+                    $mail->isSMTP();                                            // Send using SMTP
+                    $mail->Host       = 'in-v3.mailjet.com';                    // Set the SMTP server to send through
+                    $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
+                    $mail->Username   = '71a9419496b2ca6342915188b77fd4f6';                     // SMTP username
+                    $mail->Password   = '7288719218f6d56c19ddc43f6942e78f';                               // SMTP password
+                    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` also accepted
+                    $mail->Port       = 587;                                    // TCP port to connect to
+
+                    //Recipients
+                    $mail->setFrom('quentin.guitard@gmail.com', 'CACA');
+                    $mail->addAddress('quentin.guitard@gmail.com');     // Add a recipient
+
+                    // Content
+                    $mail->isHTML(true);                                  // Set email format to HTML
+                    $mail->Subject = 'Verify Email';
+                    $mail->Body    = "<a href='". $localhost ."/Agramur-master%202/verifyEmail.php?token=". $token ."'>VERIFY MY EMAIL ADRESSE</a>";
+
+                    $mail->send();
+
+                    //sendVerification($email, $token, $mail);
+                    header("Location: ../verifyEmail.php");
                     exit();
                 }
             }
@@ -84,4 +119,10 @@ if (isset($_POST['signup-submit'])) {
 else {
     header("Location: ../signup.php");
     exit();
+}
+
+
+function sendVerification($email, $token, $mail)
+{
+
 }

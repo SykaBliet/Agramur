@@ -32,8 +32,13 @@ if (isset($_POST['login-submit'])) {
                     $_SESSION['userId'] = $row['idUsers']; //$_SESSION global d'env.
                     $_SESSION['userUid'] = $row['uidUsers']; // $_SESSION global d'env.
                     
-                    header("Location: ../home.php?login=success");
-                    exit();
+                    if ($row['token'] == "") {
+                        header("Location: ../verifyEmail.php");
+                    }
+                    else {
+                        header("Location: ../home.php?login=success");
+                        exit();
+                    }
                 }
                 else { //aucun match
                 header("Location: ../login.php?error=wrongpwd");

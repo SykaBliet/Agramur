@@ -24,9 +24,7 @@
                         <li class="li-navbar"><a href="#"></a>Post Image</li>
                         <li class="li-navbar"><a href="#"></a>Contact</li>
                         <li class="li-navbar-logout">
-                        <form action="includes/logout.inc.php" method="post">
-                            <a href="login.php" type="submit" name="logout-submit">Logout</a>
-                        </form>
+                        <a href="includes/logout.inc.php" type="submit" name="logout-submit">Logout</a>
                         </li>
                     </ul>
                 </nav>

@@ -15,7 +15,7 @@
 <body>
     <?php
         if (isset($_SESSION['userId'])) {
-            echo '
+    ?>
             <header>
                 <nav class="nav-bar">
                     <ul class="ul-navbar">
@@ -28,7 +28,8 @@
                         </li>
                     </ul>
                 </nav>
-            </header';
+            </header>
+    <?php
        }
        else {
            require 'login.php';

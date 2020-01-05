@@ -138,6 +138,7 @@ a {
 }
 
 .signup-p {
+    margin: 0;
     display: inline-block;
 }
 
@@ -169,4 +170,15 @@ a {
 .signup-success-msg {
     text-align: center;
     color: green;
+}
+/* -----------------  forgot-pass ------------------ */
+.forgot-pass {
+    margin-top: 15px;
+    display: block;
+    color: rgba(50, 82, 77, 0.541);
+    text-align: center;
+}
+
+.title-pass-recovery {
+    text-align: center;
 }

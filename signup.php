@@ -31,8 +31,11 @@
                         elseif ($_GET["error"] == "passwordcheckfail") {
                             echo '<p class="signup-error-msg">Your passwords dont match</p>'; 
                         }
-                        elseif ($_GET["error"] == "usertaken") {
-                            echo '<p class="signup-error-msg">Username is already taken</p>'; 
+                        elseif ($_GET["error"] == "usernametaken") {
+                            echo '<p class="signup-error-msg">"' . $_GET['username'] .'" is already taken</p>'; 
+                        }
+                        elseif ($_GET["error"] == "emailtaken") {
+                            echo '<p class="signup-error-msg">' . $_GET['email'] .' is already taken</p>';
                         }
                     }
                     elseif (isset($_GET["signup"]) == "success") {

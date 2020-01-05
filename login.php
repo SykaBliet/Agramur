@@ -24,6 +24,7 @@
                     <input type="text" name="mailuid" placeholder="Username/E-mail...">
                     <input type="password" name="pwd" placeholder="Password">
                     <button class="login-button" type="submit" name="login-submit">Login</button>
+                    <a class="forgot-pass" href="forgotPassword.php">Forgot Password ?</a>
                     <br>
                     <div class="signup-block">
                         <p class="signup-p">Not signed in yet?</p>

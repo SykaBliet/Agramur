@@ -4,12 +4,8 @@
 
 $servername = "localhost";
 $dBUsername = "root";
-$dBPassword = "root";
+$dBPassword = "";
 $dBName = "loginsystem";
 //connection de database
-$connection = mysqli_connect($servername, $dBUsername, $dBPassword, $dBName);
+$pdo = new PDO('mysql:host=' . $servername . ';dbname=' . $dBName, $dBUsername, $dBPassword);
 //si connection fail renvoi le msg d'erreur avec l'erreur rendu par la dB
-    if (!$connection)
-    {
-        die("Connection failed: ".mysqli_connect_error());
-    }

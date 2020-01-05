@@ -9,61 +9,33 @@ use PHPMailer\PHPMailer\Exception;
 
 //protection contre l'acces direct au signup
 
-if (isset($_POST['signup-submit'])) {
+if (isset($_POST['reset-submit'])) {
     
     //run connection au database
 
-    require 'dbh.inc.php';
+    require 'includes/dbh.inc.php';
 
     //fetch info quand user s'inscrit
 
-    $username = $_POST['uid'];
     $email = $_POST['mail'];
-    $password = $_POST['pwd'];
-    $passwordRepeat = $_POST['pwd-repeat'];
-
     // error handlers
 
-    if (empty($username) || empty($email) || empty($password) || empty($passwordRepeat)) {
-        header("Location: ../signup.php?error=emptyfields&uid=".$username."&mail=".$email);
-        exit();
-    }
-    elseif (!filter_var($email, FILTER_VALIDATE_EMAIL) && !preg_match("/^$[a-zA-Z0-9]*$/", $username)) {
-        header("Location: ../signup.php?error=invaliduidmail=");
+    if (empty($email)) {
+        header("Location: forgotPassword.php?error=emptyfield&mail=empty");
         exit();
     }
     //fonction si email valide
     elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        header("Location: ../signup.php?error=invalidmail&uid=".$username);
+        header("Location: forgotPassword.php?error=invalidmail");
         exit();
     }
-    //un bon username
-    elseif (!preg_match("/^[a-zA-Z0-9]*$/", $username)) {
-        header("Location: ../signup.php?error=invaliduid&mail=".$email);
-        exit();
-    }
-    // check si password match passwordRepeat
-    elseif ($password !== $passwordRepeat) {
-        header("Location: ../signup.php?error=passwordcheckfail&uid=".$username."&mail".$email);
-        exit();
-    }
-    //check si username exist deja et protection avec "prepare statement avec placeholders -> '?'
     else {
-        $sql = "SELECT uidUsers FROM users WHERE uidUsers='" . $username . "'";
-        $stmt = $pdo->query($sql); //prepare ce qu'on a besoin dans notre db
-        $row = $stmt->fetch();
-        
-        if ($row > 0) {
-            header("Location: ../signup.php?error=usernametaken&username=".$username);
-            exit();
-        }
-        
-        $sql = "SELECT uidUsers FROM users WHERE emailUsers='" . $email . "'";
+        $sql = "SELECT * FROM users WHERE emailUsers='" . $email . "'";
         $stmt = $pdo->query($sql); //prepare ce qu'on a besoin dans notre db
         $row = $stmt->fetch();
 
         if ($row > 0) {
-            header("Location: ../signup.php?error=emailtaken&email=".$email);
+            header("Location: forgotPassword.php?error=emailtaken&email=".$email);
             exit();
         }
         
@@ -108,13 +80,13 @@ if (isset($_POST['signup-submit'])) {
             $mail->send();
 
             //sendVerification($email, $token, $mail);
-            header("Location: ../verifyEmail.php");
+            header("Location: forgotPassword.php");
             exit();
         }
     }
 }
 else {
-    header("Location: ../signup.php");
+    header("Location: forgotPassword.php");
     exit();
 }
 

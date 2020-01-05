@@ -7,7 +7,19 @@
     <title>Home</title>
 </head>
 <body>
+<?php
+if ($_GET['error'] == 'invalid') {
+?>
+    <p>WRONG LINK</p>
+<?php
+}
+else {
+?>
     <p>CHECK YOUR EMAIL TO VERIFY ACCOUNT</p>
+    <a style="color:black;" href="login.php">Email verified click here to login to your profile!</a>'
+    <a style="color:black;" href="">Didnt recieve verification email</a>'
 
-    <a style="color:black;" href="">Didnt recieve verification email</a>
 </body>
+<?php
+}
+?>

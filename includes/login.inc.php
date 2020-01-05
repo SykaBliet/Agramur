@@ -1,5 +1,6 @@
 <?php
-if (isset($_POST['login-submit'])) {
+if (isset($_POST['login-submit'])) 
+{
     
     require 'dbh.inc.php';
 
@@ -12,17 +13,13 @@ if (isset($_POST['login-submit'])) {
     }
     else {//recherche si l'uidUsers ou email est dans la DB
         $sql = "SELECT * FROM users WHERE uidUsers=? OR emailUsers=?";
-        $statment = mysqli_stmt_init($connection); //
-        if (!mysqli_stmt_prepare($statment, $sql)) { // run sql string dans DB et check si c'est les memes infos.
-            header("Location: ../login.php?error=sqlerror");
-            exit();
-        }
-        else {
-            mysqli_stmt_bind_param($statment, "ss", $mailuid, $mailuid); //pass les param du user qui a essayer de ce connecter dans la DB et voir s'il y a un resultat du $sql
-            mysqli_stmt_execute($statment); //execute les param de la DB
-            $result = mysqli_stmt_get_result($statment); //voir les resultat du statment
-            if ($row = mysqli_fetch_assoc($result)){ //check si on a eu qq chose de la db
-                $pwdCheck = password_verify($password, $row['pwdUsers']); //return 0 ou 1 //voir si le
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindValue(1, $mailuid);
+        $stmt->bindValue(2, $mailuid);
+        $stmt->execute();
+        if ($row = $stmt->fetch())
+        {
+            $pwdCheck = password_verify($password, $row['pwdUsers']);
                 if ($pwdCheck == false) {
                     header("Location: ../login.php?error=wrongpwd");
                     exit();
@@ -32,25 +29,24 @@ if (isset($_POST['login-submit'])) {
                     $_SESSION['userId'] = $row['idUsers']; //$_SESSION global d'env.
                     $_SESSION['userUid'] = $row['uidUsers']; // $_SESSION global d'env.
                     
-                    if ($row['token'] == "") {
-                        header("Location: ../verifyEmail.php");
-                    }
-                    else {
-                        header("Location: ../home.php?login=success");
-                        exit();
-                    }
+                if ($row['token'] !== '0') {
+                    header("Location: ../verifyEmail.php");
                 }
-                else { //aucun match
-                header("Location: ../login.php?error=wrongpwd");
-                exit();
+                else {
+                    header("Location: ../home.php?login=success");
+                    exit();
                 }
             }
-            else {
-                header("Location: ../login.php?error=nouser");
+            else { //aucun match
+                header("Location: ../login.php?error=wrongpwd");
                 exit();
             }
         }
+    else {
+        header("Location: ../login.php?error=nouser");
+        exit();
     }
+}
 }
 else {
     header("Location: ../login.php");

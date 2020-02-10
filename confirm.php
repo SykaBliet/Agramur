@@ -8,12 +8,12 @@
         $stmt->execute();
         $row = $stmt->fetch();
 
-        if ($row['token'] != 0 && $row['token'] == $_GET['token']) {
+        if ($row['token'] !== '0' && $row['token'] == $_GET['token']) {
             $sql = "UPDATE users SET token=0 WHERE emailUsers=?";
             $stmt = $pdo->prepare($sql);
             $stmt->bindValue(1, $_GET['email']);
             $stmt->execute();
-            header('Location: home.php?login=sucess');
+            header('Location: home.php');
             exit();
         }
         else {

@@ -8,16 +8,20 @@
 </head>
 <body>
 <?php
-if ($_GET['error'] == 'invalid') {
+if (isset($_GET['error']) == 'invalid') {
 ?>
-    <p>WRONG LINK</p>
+    <div class="verified-text">
+        <p>WRONG LINK</p>
+        <a style="color:black;" href="">Something wrong happenend try to signup again and verify your mail for a verification link</a>'
+    </div>
 <?php
 }
 else {
-?>
-    <p>CHECK YOUR EMAIL TO VERIFY ACCOUNT</p>
-    <a style="color:black;" href="login.php">Email verified click here to login to your profile!</a>'
-    <a style="color:black;" href="">Didnt recieve verification email</a>'
+    ?>
+    <div class="verified-text">
+        <p>Please verify your email</p>
+        <button class="verified-button" onclick="window.location.href = 'login.php';">Login</button>
+    </div>
 
 </body>
 <?php

@@ -4,7 +4,6 @@ ini_set('display_errors', 1);
 $localhost = 'http://localhost';
 
 use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
 //protection contre l'acces direct au signup
@@ -82,23 +81,24 @@ if (isset($_POST['signup-submit'])) {
             $stmt->bindValue(4, $token);
             $stmt->execute();
 
-            include_once 'PHPMailer/PHPMailer.php';
-            include_once 'PHPMailer/SMTP.php';
-            include_once 'PHPMailer/Exception.php';
+            require 'PHPMailer/src/Exception.php';
+            require 'PHPMailer/src/PHPMailer.php';
+            require 'PHPMailer/src/SMTP.php';
 
             $mail = new PHPMailer(true);
-            $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      // Enable verbose debug output
-            $mail->isSMTP();                                            // Send using SMTP
-            $mail->Host       = 'in-v3.mailjet.com';                    // Set the SMTP server to send through
+            $mail->SMTPDebug  = 1;                      // Enable verbose debug output
+            $mail->isSMTP();       
+            $mail->Mailer     = "smtp";                                     // Send using SMTP
+            $mail->Host       = 'smtp.gmail.com';                    // Set the SMTP server to send through
             $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-            $mail->Username   = '8ae5af56a2cc2bcf242e12d516cd8a4d';                     // SMTP username
-            $mail->Password   = '7b6e978de69d0d474870b8c3acf41519';                               // SMTP password
-            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` also accepted
+            $mail->Username   = 'camagru.projet@gmail.com';                     // SMTP username
+            $mail->Password   = 'aurele123';                               // SMTP password
+            $mail->SMTPSecure = "tls";        // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` also accepted
             $mail->Port       = 587;                                    // TCP port to connect to
 
             //Recipients
-            $mail->setFrom('aurele.guitard@gmail.com', 'CACA');
-            $mail->addAddress('aurele.guitard@gmail.com');     // Add a recipient
+            $mail->setFrom('camagru.projet@gmail.com', 'Camagru Team');
+            $mail->addAddress($email);     // Add a recipient
 
             // Content
             $mail->isHTML(true);                                  // Set email format to HTML

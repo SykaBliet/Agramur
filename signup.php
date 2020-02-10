@@ -2,6 +2,8 @@
 
 ?>
 <head>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -9,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css?family=Dosis|Lato|Montserrat|Oswald|Roboto|Sulphur+Point&display=swap" rel="stylesheet">
     <title>Signup</title>
 </head>
+</body>
     <main>
         <div class="wrapper-main">
             <section class="container-login-form2">
@@ -51,7 +54,7 @@
             </section>
         </div>
     </main>
-
+</body>
     <?php
         require "footer.php";
     ?>

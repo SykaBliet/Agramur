@@ -28,6 +28,8 @@ if (isset($_POST['login-submit']))
                     session_start();    
                     $_SESSION['userId'] = $row['idUsers'];
                     $_SESSION['userUid'] = $row['uidUsers'];
+                    $_SESSION['uidUsers'] = $row['uidUsers'];
+                    $_SESSION['emailUsers'] = $row['emailUsers'];
                     
                 if ($row['token'] !== '0') {
                     header("Location: ../verifyEmail.php");

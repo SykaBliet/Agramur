@@ -70,7 +70,7 @@ if (isset($_POST['reset-submit'])) {
         $mail->Subject = 'Reset Password';
         $mail->Body    = '
         <p>This is your reset password link</p>
-        <a href="'. $localhost .'/Agramur/newPassword.php?selector='. $selector .'&validator='. bin2hex($token) .'">Change my Password!</a>';
+        <a href="'. $localhost .'/Agramur/typeNewPassword.php?selector='. $selector .'&validator='. bin2hex($token) .'">Change my Password!</a>';
         
         $mail->send();
 

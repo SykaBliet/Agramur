@@ -1,5 +1,10 @@
 <?php
-    
+    if (!isset($_SESSION)) {
+        session_start();
+    }
+    if (isset($_SESSION['userId'])) {
+        require 'header.php';
+    }
 ?>
 <head>
     <meta charset="UTF-8">
@@ -35,5 +40,10 @@
 </div>
 </head>
 <?php
-
+    if (!isset($_SESSION)) {
+        session_start();
+    }
+    if (isset($_SESSION['userId'])) {
+        require 'footer.php';
+    }
 ?>

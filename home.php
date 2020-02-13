@@ -4,7 +4,6 @@ include 'header.php';
 <?php
         if (isset($_SESSION['userId'])) {
             ?>
-            <p>dazijdoazd</p>
             <p>You are logged in!</p>
             <?php
         }

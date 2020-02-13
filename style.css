@@ -95,7 +95,7 @@ a {
     padding: 10px 30px 10px 30px;
     height: 450px;
     width: 400px;
-    color: rgba(50, 82, 77, 0.822);
+    color: rgba(28, 44, 42, 0.822);
  }
 
  input[type="text"],input[type="password"] {
@@ -212,9 +212,6 @@ a {
 
 /*----------  Clickable link  ------------- */
 
-footer {
-    
-}
 
 #footer-container {
     background-image: url(img/cool-footer.png);
@@ -238,3 +235,40 @@ footer {
     padding-bottom: 10px;
     list-style: none;
 }
+
+/* ---------- profil page ----------- */
+
+#button-changepwd {
+    text-align: center;
+    display: block;
+    margin-left: 70px;
+    border-radius: 25px;
+    border-color: white;
+    background-color:  rgba(238, 234, 234, 0.205);
+    padding: 10px 25px;
+    font-family: 'Sulphur Point', sans-serif;
+    font-size: 16px;
+    margin-top: 30px;
+    letter-spacing: 1.1px;
+    cursor: pointer;
+}
+
+#profil-container {
+    position: relative;
+    margin: 11% auto;
+    height: 450px;
+    width: 400px;
+    background: rgba(238, 234, 234, 0.329);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+}
+
+.h3-profil {
+    font-size: 30px;
+}
+
+.profil-p {
+    font-size: 20px;
+}
+
+

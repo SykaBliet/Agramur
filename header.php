@@ -23,7 +23,7 @@
                     <ul class="ul-navbar">
                         <a class="logo" href="index.php"><img class="logo-img1" src="img/logo-img1.png" alt="logo"></a>
                         <li class="li-navbar"><a href="profil.php">Profil</a></li>
-                        <li class="li-navbar"><a href="#">Post Image</a></li>
+                        <li class="li-navbar"><a href="post-image.php">Post Image</a></li>
                         <li class="li-navbar-logout">
                         <a href="includes/logout.inc.php" type="submit" name="logout-submit">Logout</a>
                         </li>
@@ -33,7 +33,6 @@
     <?php
        }
        else {
-           require 'login.php';
            header ("Location: login.php");
        }
     ?>

@@ -271,4 +271,142 @@ a {
     font-size: 20px;
 }
 
+/* camera */
 
+#video {
+    border: 1px solid black;
+    box-shadow: 2px 2px 3px black;
+    width:320px;
+    height:240px;
+  }
+  
+  #photo {
+    border: 1px solid black;
+    box-shadow: 2px 2px 3px black;
+    width:320px;
+    height:240px;
+  }
+  
+  #canvas {
+    display:none;
+  }
+  
+  .camera {
+    width: 340px;
+    display:inline-block;
+  }
+  
+  .output {
+    width: 340px;
+    display:inline-block;
+  }
+  
+  #startbutton {
+    display:block;
+    position:relative;
+    margin-left:auto;
+    margin-right:auto;
+    /* bottom:32px;
+    background-color: rgba(0, 150, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    box-shadow: 0px 0px 1px 2px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    font-family: "Lucida Grande", "Arial", sans-serif;
+    color: rgba(255, 255, 255, 1.0); */
+    text-align: center;
+    display: block;
+    border-radius: 25px;
+    border-color: white;
+    background-color:  rgba(238, 234, 234, 0.205);
+    padding: 10px 25px 10px 25px;
+    margin-bottom: 10px;
+    /* margin-left: 124px; */
+    font-family: 'Sulphur Point', sans-serif;
+    font-size: 16px;
+    margin-top: 30px;
+    letter-spacing: 1.1px;
+    cursor: pointer
+  }
+
+.filter {
+    display: inline-block;
+    width: 13%;
+    height: auto;
+    text-align: center;
+}
+
+.filterOnImage {
+    position: absolute;
+    margin-top: -315px;
+    width: 300px;
+    height: auto;
+    margin-left: 9px;
+}
+
+.resultPhoto {
+    position: relative;
+    top: -64px;
+}
+
+.button-photo-off {
+    pointer-events: none;
+}
+
+.select {
+    cursor: pointer;
+}
+
+.container-gallery {
+    position: relative;
+    margin: 6% auto;
+    height: auto;
+    width: 320px;
+    background: rgba(238, 234, 234, 0.329);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    padding-bottom: 25px;
+}
+.gallery-button {
+    text-align: center;
+    display: block;
+    border-radius: 25px;
+    border-color: white;
+    background-color:  rgba(238, 234, 234, 0.205);
+    padding: 10px 25px;
+    font-family: 'Sulphur Point', sans-serif;
+    font-size: 16px;
+    margin-top: 30px;
+    letter-spacing: 1.1px;
+    cursor: pointer;
+    margin-left: 110px;
+    margin-bottom: 10px;
+}
+
+.comment {
+    padding:0px 20px 0px 20px;
+    border-radius: 25px;
+    border-color: white;
+    border-style: solid;
+    border-width: 1px;
+    margin: 8px;
+}
+
+.comment-title {
+    padding:0px 20px 0px 20px;
+}
+
+.like-number {
+    
+}
+
+.yes {
+    color: rgb(134, 62, 110);
+    background: transparent;
+    border: none;
+    font-size: 35px;
+}
+
+.img-login {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}

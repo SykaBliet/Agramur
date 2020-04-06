@@ -117,8 +117,3 @@ else {
     header("Location: ../signup.php");
     exit();
 }
-
-// function sendVerification($email, $token, $mail)
-// {
-
-// }

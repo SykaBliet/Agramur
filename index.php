@@ -9,7 +9,6 @@
             header("Location: login.php");
         }
         ?>
-    
 <?php
     require "footer.php";
 ?>

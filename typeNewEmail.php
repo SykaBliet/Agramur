@@ -12,7 +12,7 @@
     </form>
 <?php 
 } else {
-    Header ('Location: login.php');
+    Header ('Location: profil.php');
 } 
 ?>
 

@@ -8,12 +8,4 @@
                 <li class="footer-list"><a href="https://www.linkedin.com/in/aurele-guitard-668937122/"><i class="fas fa-paper-plane"></i></a></li>
             </ul>
         </div>
-        <div class="footer-content">
-            <h1></h1>
-            <p></p>
-        </div>
-        <div class="footer-content">
-            <h1></h1>
-            <p></p>
-        </div>
     </div>

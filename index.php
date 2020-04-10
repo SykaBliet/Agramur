@@ -6,7 +6,7 @@
             header("Location: home.php");
         }
         else {
-            header("Location: login.php");
+            header("Location: galleryPage.php");
         }
         ?>
 <?php

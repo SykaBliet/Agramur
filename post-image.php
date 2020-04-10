@@ -49,7 +49,8 @@
     <a href="post-image.php?filter=cap"><img class="filter" id="cap" src="filter/cap.png" alt="cap filter"></a>
 </div>
 
-<div id="show-feed">
+<div id="show-feed1">
+    <h2>Last Images Updated</h2>
     <?php
     require 'includes/dbh.inc.php';
     $user = $_SESSION['userId'];

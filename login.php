@@ -1,3 +1,4 @@
+<?php require 'gallery.php' ?>
 <head>
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <meta charset="UTF-8">
@@ -10,6 +11,7 @@
 <body>
     <main>
     <?php
+
         if (isset($_SESSION['userId'])) {
             require 'header.php';
             ?>
@@ -40,19 +42,7 @@
             </div>
         <?php
         }
-        ?> 
-    <?php
-        if (isset($_SESSION['userId'])) {
-            ?>
-            <p>You are logged in!</p>
-        <?php
-        }
-        else {
-            ?>
-            <p>You are logged out!</p>
-        <?php
-        }
-    ?>
+        ?>
     </main>
     </body>
     <?php

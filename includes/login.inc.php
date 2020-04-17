@@ -11,6 +11,10 @@ if (isset($_POST['login-submit']))
         header("Location: ../login.php?error=emptyfields");
         exit();
     }
+    elseif (!preg_match("/^$[a-zA-Z0-9]*$/", $username)) {
+        header("Location: ../login.php?error=somethingwentwrong");
+        exit();
+    }
     else {//recherche si l'uidUsers ou email est dans la DB
         $sql = "SELECT * FROM users WHERE uidUsers=? OR emailUsers=?";
         $stmt = $pdo->prepare($sql);

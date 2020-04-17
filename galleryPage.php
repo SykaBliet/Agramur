@@ -18,7 +18,7 @@
             $row = $stmt->fetch();
             ?>
             <form action="like.php" method="post">
-            <button class="yes fas fa-heart" name="like"></button><span class="like-number"><?= $row['liked'];?></span>
+            <button class="heart fas fa-heart" name="like"></button><span class="like-number"><?= $row['liked'];?></span>
             </form>
             <?php
             $commentsql = "SELECT * FROM comments WHERE photo = '$valuephoto' order by dates ASC";

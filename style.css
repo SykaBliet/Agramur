@@ -1,26 +1,41 @@
 /* -------------------- PAGE HEADER -------------------- */
 
 body {
-    background-image: url(img/cool-background.png);
+    background: rgb(255, 197, 222);
+    background: linear-gradient(336deg, rgb(253, 111, 172) 30%, rgb(114, 177, 255) 72%);
+    background-position-x: 0%;
+    background-position-y: 0%;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    background-size: auto;
+    background-origin: padding-box;
+    background-clip: border-box;
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
     background-color: #464646;
-    font-family: 'Sulphur Point', sans-serif;
     margin: 0;
     height: 100%;
+    font-family: 'Baloo Bhaina 2', cursive;
 }
 
 .nav-bar {
     max-width: 100%;
 }
 
+.title-footer{
+    color:white;
+    font-size: 36px;
+}
+
 .logo-img1 {
-    max-width: 50px;
+    max-width: 67px;
     max-height: 50px;
     display: inline-block;
     position: relative;
+    margin-top: 5px;
+    margin-left: 5px;
 }
 
 .logo {
@@ -37,12 +52,11 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-image: url(img/cool-footer.png);
 }
 
 .li-navbar {
     position: relative;
-    font-size: 24px;
+    font-size: 36px;
     display: block;
     color: white;
     text-align: center;
@@ -53,7 +67,7 @@ body {
 
 .li-navbar-logout {
     position: relative;
-    font-size: 24px;
+    font-size: 36px;
     display: block;
     color: white;
     text-align: center;
@@ -69,17 +83,26 @@ a {
 
 .login-title {
     text-align: center;
-    font-size: 42px;
+    font-size: 46px;
     top: 0;
+    color: whitesmoke;
+    margin-bottom: 16px;
 }
 
 .container-login-form {
     position: relative;
-    margin: 11% auto;
+    margin: 4% auto;
     height: 450px;
     width: 400px;
     background: rgba(238, 234, 234, 0.329);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+}
+.container-forgot-form {
+    position: relative;
+    margin: 4% auto;
+    height: 380px;
+    width: 400px;
+    background: rgba(238, 234, 234, 0.329);
     border-radius: 10px;
 }
  .form-login {
@@ -94,7 +117,6 @@ a {
     padding: 10px 30px 10px 30px;
     height: 450px;
     width: 400px;
-    color: rgba(28, 44, 42, 0.822);
  }
 
  input[type="text"],input[type="password"] {
@@ -107,7 +129,6 @@ a {
     height: 38px;
     border: none;
     outline: none;
-    border-left: 4px solid rgba(50, 82, 77, 0.541);
     font-weight: 400;
     font-size: 15px;
     transition: 0.3s ease;
@@ -115,52 +136,109 @@ a {
     color: rgba(50, 82, 77, 0.842);
     margin-top: 10px;
     margin-left: 35px;
-    border-radius: 25px;
+    border-radius: 10px;
+}
+
+input[name="comment"]{
+    display: block;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    padding: 8px;
+    padding-left: 15px;
+    width: 80%;
+    height: 38px;
+    border: none;
+    outline: none;
+    font-weight: 400;
+    font-size: 15px;
+    transition: 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.904);
+    color: rgba(50, 82, 77, 0.842);
+    margin-top: 20px;
+    margin-left: 15px;
+    border-radius: 10px;
 }
 
  .login-button {
+    text-decoration:none;
+    text-align: center;
+    display: block;
+    border: none;
+    border-radius: 25px;
+    color:#FFFFFF;
+    background-color:#80a2ff;
+    box-shadow:inset 0 -0.6em 1em -0.35em rgba(0,0,0,0.17),inset 0 0.6em 2em -0.3em rgba(255,255,255,0.15),inset 0 0 0em 0.05em rgba(255,255,255,0.12);
+    padding: 10px 25px;
+    margin-left: 124px;
+    font-size: 16px;
+    margin-top: 30px;
+    letter-spacing: 1px;
+    cursor: pointer;
+ }
+
+ .login-button:hover{
+    background-color:#aec3fd;
+ }
+
+ .signup-button {
     text-align: center;
     display: block;
     border-radius: 25px;
-    border-color: white;
-    background-color:  rgba(238, 234, 234, 0.205);
+    border: none;
+    border-radius: 25px;
+    color:#FFFFFF;
+    background-color:#80a2ff;
+    box-shadow:inset 0 -0.6em 1em -0.35em rgba(0,0,0,0.17),inset 0 0.6em 2em -0.3em rgba(255,255,255,0.15),inset 0 0 0em 0.05em rgba(255,255,255,0.12);
     padding: 10px 25px;
-    margin-left: 124px;
-    font-family: 'Sulphur Point', sans-serif;
+    margin-left: 110px;
     font-size: 16px;
     margin-top: 30px;
     letter-spacing: 1.1px;
     cursor: pointer;
-    /* box-shadow: 10px; */
+ }
+
+ .signup-button:hover{
+    background-color:#aec3fd;
  }
 
 .signup-block {
     text-align: center;
+    margin-top: 20px;
 }
 
 .signup-p {
+    font-size: 18px;
     margin: 0;
     display: inline-block;
+    color: rgb(84, 90, 89);
 }
 
-.signup-button {
+.signup-button2 {
     display: inline-block;
-    color: rgba(50, 82, 77, 0.541);
+    color: rgba(31, 47, 39, 0.904);
     text-align: center;
+    font-size: 18px;
 }
 
 /* ----------------- Page signup.php --------------- */
 
 .container-login-form2 {
     position: relative;
-    margin: 11% auto;
+    margin: 4% auto;
     height: 500px;
     width: 400px;
     background: rgba(238, 234, 234, 0.329);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
     border-radius: 10px;
 }
 
+.container-login-form3 {
+    position: relative;
+    margin: 4% auto;
+    height: 290px;
+    width: 370px;
+    background: rgba(238, 234, 234, 0.329);
+    border-radius: 10px;
+}
 /* ------------------ Error msg Signup ------------------ */
 
 .signup-error-msg {
@@ -176,7 +254,7 @@ a {
 .forgot-pass {
     margin-top: 15px;
     display: block;
-    color: rgba(50, 82, 77, 0.541);
+    color: rgb(84, 90, 89);
     text-align: center;
 }
 
@@ -199,13 +277,12 @@ a {
     display: block;
     border-radius: 25px;
     border-color: white;
-    background-color:  rgba(238, 234, 234, 0.205);
     padding: 10px 25px;
-    font-family: 'Sulphur Point', sans-serif;
     font-size: 16px;
     margin-top: 30px;
     letter-spacing: 1.1px;
     cursor: pointer;
+    border:0.16em solid rgba(255,255,255,0);
 }
 
 
@@ -213,7 +290,6 @@ a {
 
 
 #footer-container {
-    background-image: url(img/cool-footer.png);
     width: 100%;
     height: auto;
     display: inline-flex;
@@ -221,52 +297,94 @@ a {
 }
 
 .fa-linkedin-in {
-    color: orange;
+    color: rgb(255, 61, 145);
     font-size: 36px;
     }
 
 .fa-paper-plane  {
-    color: orange;
+    color: rgb(255, 61, 145);
     font-size: 36px;
     }
 
 .footer-list {
+    display: inline-block;
     padding-bottom: 10px;
     list-style: none;
+    margin: 0 10px 0px 5px;
 }
 
 /* ---------- profil page ----------- */
 
 #button-changepwd {
+    text-decoration: none;
     text-align: center;
     display: block;
     margin-left: 70px;
     border-radius: 25px;
-    border-color: white;
-    background-color:  rgba(238, 234, 234, 0.205);
+    border: none;
+    color:#FFFFFF;
+    background-color:#80a2ff;
+    box-shadow:inset 0 -0.6em 1em -0.35em rgba(0,0,0,0.17),inset 0 0.6em 2em -0.3em rgba(255,255,255,0.15),inset 0 0 0em 0.05em rgba(255,255,255,0.12);
     padding: 10px 25px;
-    font-family: 'Sulphur Point', sans-serif;
     font-size: 16px;
     margin-top: 30px;
     letter-spacing: 1.1px;
     cursor: pointer;
 }
 
+#button-changepwd:hover{
+    background-color:#aec3fd;
+}
+
+#button-changepwd1 {
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    margin-left: 115px;
+    border: none;
+    border-radius: 25px;
+    color:#FFFFFF;
+    background-color:#80a2ff;
+    box-shadow:inset 0 -0.6em 1em -0.35em rgba(0,0,0,0.17),inset 0 0.6em 2em -0.3em rgba(255,255,255,0.15),inset 0 0 0em 0.05em rgba(255,255,255,0.12);
+    padding: 10px 25px;
+    font-size: 18px;
+    margin-top: 30px;
+    letter-spacing: 1.1px;
+    cursor: pointer;
+}
+
+#button-changepwd1:hover{
+    background-color:#aec3fd;
+}
+
 #profil-container {
     position: relative;
-    margin: 11% auto;
+    margin: 4% auto;
     height: 600px;
     width: 400px;
     background: rgba(238, 234, 234, 0.329);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+}
+
+#profil-page-container {
+    position: relative;
+    margin: 4% auto;
+    height: 680px;
+    width: 400px;
+    background: rgba(238, 234, 234, 0.329);
     border-radius: 10px;
 }
 
 .h3-profil {
     font-size: 30px;
+    margin: 0;
 }
 
 .profil-p {
+    font-size: 20px;
+}
+.pick-p {
+    margin-left: 10px;
     font-size: 20px;
 }
 
@@ -305,27 +423,24 @@ a {
     position:relative;
     margin-left:auto;
     margin-right:auto;
-    /* bottom:32px;
-    background-color: rgba(0, 150, 0, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.7);
-    box-shadow: 0px 0px 1px 2px rgba(0, 0, 0, 0.2);
-    font-size: 14px;
-    font-family: "Lucida Grande", "Arial", sans-serif;
-    color: rgba(255, 255, 255, 1.0); */
     text-align: center;
     display: block;
     border-radius: 25px;
-    border-color: white;
-    background-color:  rgba(238, 234, 234, 0.205);
+    border: none;
+    color:#FFFFFF;
+    background-color:#80a2ff;
+    box-shadow:inset 0 -0.6em 1em -0.35em rgba(0,0,0,0.17),inset 0 0.6em 2em -0.3em rgba(255,255,255,0.15),inset 0 0 0em 0.05em rgba(255,255,255,0.12);
     padding: 10px 25px 10px 25px;
     margin-bottom: 10px;
-    /* margin-left: 124px; */
-    font-family: 'Sulphur Point', sans-serif;
     font-size: 16px;
     margin-top: 30px;
     letter-spacing: 1.1px;
-    cursor: pointer
-  }
+    cursor: pointer;
+    }
+
+    #startbutton:hover {
+        background-color:#aec3fd;
+    }
 
 .filter {
     display: inline-block;
@@ -357,11 +472,10 @@ a {
 
 .container-gallery {
     position: relative;
-    margin: 6% auto;
+    margin: 4% auto;
     height: auto;
     width: 320px;
     background: rgba(238, 234, 234, 0.329);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
     border-radius: 10px;
     padding-bottom: 25px;
 }
@@ -369,16 +483,20 @@ a {
     text-align: center;
     display: block;
     border-radius: 25px;
-    border-color: white;
-    background-color:  rgba(238, 234, 234, 0.205);
+    border: none;
+    color:#FFFFFF;
+    background-color:#80a2ff;
+    box-shadow:inset 0 -0.6em 1em -0.35em rgba(0,0,0,0.17),inset 0 0.6em 2em -0.3em rgba(255,255,255,0.15),inset 0 0 0em 0.05em rgba(255,255,255,0.12);
     padding: 10px 25px;
-    font-family: 'Sulphur Point', sans-serif;
     font-size: 16px;
     margin-top: 30px;
     letter-spacing: 1.1px;
     cursor: pointer;
     margin-left: 110px;
     margin-bottom: 10px;
+}
+.gallery-button:hover {
+    background-color:#aec3fd;
 }
 
 .comment {
@@ -391,11 +509,14 @@ a {
 }
 
 .comment-title {
-    padding:0px 20px 0px 20px;
+    padding:10px 20px 0px 15px;
+    color: rgb(66, 66, 66);
+    margin: 0;
 }
 
-.yes {
-    color: rgb(134, 62, 110);
+.heart {
+    margin-left: 5px;
+    color: rgb(253, 111, 172);
     background: transparent;
     border: none;
     font-size: 35px;
@@ -411,3 +532,68 @@ a {
     margin-top: -500px;
     margin-right: 100px;
 }
+
+.filterOnImage1 {
+    position: absolute;
+    margin-top: -230px;
+    width: 300px;
+    height: auto;
+    margin-left: 9px;
+}
+
+.file {
+    text-align: center;
+    display: block;
+    border-radius: 25px;
+    border-color: white;
+    background-color: rgba(238, 234, 234, 0.205);
+    padding: 10px 25px;
+    font-size: 14px;
+    margin-top: 30px;
+    letter-spacing: 1.1px;
+    cursor: pointer;
+}
+
+
+#upload-container {
+    position: relative;
+    margin: 11% auto;
+    height: 410px;
+    width: 400px;
+    background: rgba(238, 234, 234, 0.329);
+    border-radius: 10px;
+}
+
+.filterOnImage2 {
+    position: absolute;
+    margin-top: -315px;
+    width: 300px;
+    height: auto;
+    margin-left: 355px;
+    z-index: 2;
+}
+
+#show-feed2 {
+    float: right;
+    margin-top: -420px;
+    margin-right: 100px;
+}
+
+.ml7 {
+    position: relative;
+    font-weight: 900;
+}
+  .ml7 .text-wrapper {
+    position: relative;
+    display: inline-block;
+    padding-top: 0.2em;
+    padding-right: 0.05em;
+    padding-bottom: 0.1em;
+    overflow: hidden;
+  }
+  .ml7 .letter {
+    transform-origin: 0 100%;
+    display: inline-block;
+    line-height: 1em;
+  }
+

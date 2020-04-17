@@ -4,7 +4,7 @@
 <?php
     if (isset($_SESSION['userId'])){
 ?>
-<div id="profil-container">
+<div id="profil-page-container">
     <div class="form-login">
         <h1 class="login-title">Profil Details</h1>
         <div id="profil-username">

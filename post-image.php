@@ -17,8 +17,7 @@
 <script src="camera.js">
 </script>
 <div>
-<a id="download" class="select"><img src="https://img.icons8.com/bubbles/50/000000/download.png"></a>
-<a id="redo" class="select"><img src="https://img.icons8.com/bubbles/50/000000/recurring-appointment.png"></a>
+    <a id="download" class="select"><img src="https://img.icons8.com/bubbles/50/000000/download.png"></a>
 </div>
 <div class="camera">
     <video id="video">Video stream not available.</video>
@@ -34,6 +33,8 @@
         if(isset($filter)){
     ?>
             <img class="filterOnImage" src="filter/<?=$filter?>.png" alt="">
+            <img class="filterOnImage2" src="filter/<?=$filter?>.png" alt="">
+            
     <?php
         }
     ?>
@@ -48,7 +49,6 @@
     <a href="post-image.php?filter=hat"><img class="filter" id="hat" src="filter/hat.png" alt="hat filter"></a>
     <a href="post-image.php?filter=cap"><img class="filter" id="cap" src="filter/cap.png" alt="cap filter"></a>
 </div>
-
 <div id="show-feed1">
     <h2>Last Images Updated</h2>
     <?php
@@ -58,9 +58,10 @@
     $stmt = $pdo->query($sql);
     $row = $stmt->fetchAll();
     foreach ($row as $key => $value) {
-      ?> <div>
-            <img src="<?php echo $value['photo']; ?>" alt="">
-        </div>
+    ?> 
+    <div>
+        <img src="<?php echo $value['photo']; ?>" alt="">
+    </div>
     <?php
     }
     ?>

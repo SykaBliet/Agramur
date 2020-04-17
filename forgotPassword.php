@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css?family=Dosis|Lato|Montserrat|Oswald|Roboto|Sulphur+Point&display=swap" rel="stylesheet">
     <title>forgot password</title>
 </head>
-<div class="container-login-form">
+<div class="container-forgot-form">
     <form class="form-login" action="includes/forgotPassword.inc.php" method="post"> 
         <h1 class="login-title">Reset Password</h1>
         <h4 class="title-pass-recovery">Send password recovery email</h3>

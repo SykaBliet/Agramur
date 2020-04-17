@@ -25,7 +25,7 @@ if (isset($_SESSION['userId'])) {
             <input type="hidden" name="photo" value="<?php echo $valuephoto; ?>">
             <input type="hidden" name="idUsers" value="<?php echo $user; ?>">
             <input type="hidden" name="uidUsers" value="<?php echo $_SESSION["uidUsers"]; ?>">
-            <button class="yes fas fa-heart" name="like"></button><span class="like-number"><?= $row['liked'];?></span>
+            <button class="heart fas fa-heart" name="like"></button><span class="like-number"><?= $row['liked'];?></span>
             </form>
             <?php
             $commentsql = "SELECT * FROM comments WHERE photo = '$valuephoto' order by dates ASC";

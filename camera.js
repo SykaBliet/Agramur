@@ -19,7 +19,6 @@
     var photo = null;
     var startbutton = null;
     var download = null;
-    var redo = null;
     var flag = 0;
 
     function startup() {
@@ -29,7 +28,6 @@
       startbutton = document.getElementById('startbutton');
       filter = window.location.href.slice(47);
       download = document.getElementById('download');
-      redo = document.getElementById('redo');
       flag = 0;
   
       navigator.mediaDevices.getUserMedia({video: true, audio: false})
@@ -72,11 +70,6 @@
         }
       }, false);
 
-      redo.addEventListener('click', function(ev){
-        clearphoto();
-        ev.preventDefault();
-      }, false);
-      
       clearphoto();
     }
   
@@ -108,7 +101,6 @@
       
         var data = canvas.toDataURL('image/png');
         photo.setAttribute('src', data);
-        // myAjax(data);
         flag = 1;
       } else {
         clearphoto();
@@ -133,7 +125,7 @@
 
     http.onreadystatechange = function() {//Call a function when the state changes.
         if(http.readyState == 4 && http.status == 200) {
-            alert("Do you want to ");
+            alert("Picture Uploaded to your gallery");
         }
     }
 http.send(params);

@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Dosis|Lato|Montserrat|Oswald|Roboto|Sulphur+Point&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2&display=swap" rel="stylesheet"> 
     <title></title>
 </head>
 <body>
@@ -24,6 +24,7 @@
                         <a class="logo" href="index.php"><img class="logo-img1" src="img/logo-img1.png" alt="logo"></a>
                         <li class="li-navbar"><a href="profil.php">Profil</a></li>
                         <li class="li-navbar"><a href="post-image.php">Post Image</a></li>
+                        <li class="li-navbar"><a href="upload-page.php">Upload</a></li>
                         <li class="li-navbar-logout">
                         <a href="includes/logout.inc.php" type="submit" name="logout-submit">Logout</a>
                         </li>

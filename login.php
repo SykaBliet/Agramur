@@ -1,11 +1,12 @@
 <?php require 'gallery.php' ?>
 <head>
-<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Dosis|Lato|Montserrat|Oswald|Roboto|Sulphur+Point&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2&display=swap" rel="stylesheet"> 
     <title>Home</title>
 </head>
 <body>
@@ -33,10 +34,9 @@
                     <input type="password" name="pwd" placeholder="Password">
                     <button class="login-button" type="submit" name="login-submit">Login</button>
                     <a class="forgot-pass" href="forgotPassword.php">Forgot Password ?</a>
-                    <br>
                     <div class="signup-block">
                         <p class="signup-p">Not signed in yet?</p>
-                        <a class="signup-button" href="signup.php">Sign Up</a>
+                        <a class="signup-button2" href="signup.php">Sign Up</a>
                     </div>
                 </form>
             </div>

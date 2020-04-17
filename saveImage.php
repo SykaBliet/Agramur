@@ -46,9 +46,7 @@ if (isset($_SESSION['userId'])) {
 	imagepng($new_img, "images/$user/".$file);
 	$picture_file = "images/$user/$file";
 	//insert into database picture uploaded
-	
-	require 'includes/dbh.inc.php';
-	
+	require 'includes/dbh.inc.php';	
 	$sql = "INSERT INTO userphotos (idUsers, uidUsers, photo, dates) VALUES (?, ?, ?, ?)";
 	$stmt = $pdo->prepare($sql);
 	$stmt->bindValue(1, $userId);
@@ -56,10 +54,9 @@ if (isset($_SESSION['userId'])) {
 	$stmt->bindValue(3, $picture_file);
 	$stmt->bindValue(4, date("Ymdhis"));
 	$stmt->execute();
-
 }
 else {
-	header("Location: Login.php");
+header("Location: Login.php");
 }
-  ?>
+?>
   

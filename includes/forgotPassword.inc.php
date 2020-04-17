@@ -5,9 +5,7 @@ $localhost = 'http://localhost';
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
-
 //protection contre l'acces direct au signup
-
 if (isset($_POST['reset-submit'])) {
     //timing attack protection. (use 2 tokens)
     $selector = bin2hex(random_bytes(8));
@@ -16,9 +14,7 @@ if (isset($_POST['reset-submit'])) {
     $expires = date("U")+ 1800;
     //run connection au database
     require 'dbh.inc.php';
-
     $email = $_POST['mail'];
-    
     // deleting previous tokens if exist
     $sql = "DELETE FROM pwdReset WHERE pwdResetEmail=?";
     $stmt = $pdo->prepare($sql);
@@ -34,7 +30,6 @@ if (isset($_POST['reset-submit'])) {
     $stmt->bindValue(3, $hashedToken);
     $stmt->bindValue(4, $expires);
     $stmt->execute();
-
     if (empty($email)) {
         header("Location: forgotPassword.php?error=emptyfield&mail=empty");
         exit();

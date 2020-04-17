@@ -4,7 +4,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Dosis|Lato|Montserrat|Oswald|Roboto|Sulphur+Point&display=swap" rel="stylesheet">
-    <title>Home</title>
+    <title>VerifyEmail</title>
 </head>
 <body>
 <?php
@@ -22,7 +22,6 @@ else {
         <p>Please verify your email</p>
         <button class="verified-button" onclick="window.location.href = 'login.php';">Login</button>
     </div>
-
 </body>
 <?php
 }

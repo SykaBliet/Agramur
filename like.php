@@ -1,11 +1,4 @@
-<?php 
-// <p><?php
-// $likesql = "SELECT * FROM userphotos WHERE photo = '$valuephoto' ";
-// $stmt = $pdo->query($likesql);
-// $row = $stmt->fetchAll();
-//  $value['likes'] 
-//</p>
-
+<?php
 $id= $_POST['idUsers'];
 $username= $_POST['uidUsers'];
 $photo= $_POST['photo'];
@@ -13,11 +6,8 @@ $photo= $_POST['photo'];
 if(isset($_POST["like"])) {
     require 'includes/dbh.inc.php';
     $sql = "SELECT * FROM likes WHERE idUsers='" . $id . "' AND uidUsers='" . $username . "' AND photo='" . $photo . "' ";
-    // $sql = "SELECT COUNT(1) FROM likes WHERE photo =$photo";
     $stmt = $pdo->query($sql);
     $row = $stmt->fetch();
-    // var_dump($row);
-    // die;
     if (empty($row)){
         $sql = "INSERT INTO likes (idUsers, uidUsers, photo, liked) VALUES (?, ?, ?, liked + 1)";
         $stmt = $pdo->prepare($sql);
@@ -65,5 +55,4 @@ if(isset($_POST["like"])) {
     }
 }
 header("Location: home.php");
-
 ?>

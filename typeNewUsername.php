@@ -1,8 +1,6 @@
 <?php
-    require 'header.php';
-?>
-<?php
-    if (isset($_SESSION['userId'])){
+require 'header.php';
+if (isset($_SESSION['userId'])) {
 ?>
     <form action="reset-username.php" method="post">
         <input type="text" name="old-username" placeholder="Enter Old Username">
@@ -11,11 +9,9 @@
         <button type="submit" name="reset-username-submit">Confirm</button>
     </form>
 <?php 
-} else {
-    Header ('Location: login.php');
 } 
-?>
-
-<?php
-    require 'footer.php';
+else {
+Header ('Location: login.php');
+}
+require 'footer.php';
 ?>

@@ -38,12 +38,11 @@
         <button class="login-button" type="submit" name="reset-submit">Reset</button>
     </form>
 </div>
-</head>
 <?php
-    if (!isset($_SESSION)) {
-        session_start();
-    }
-    if (isset($_SESSION['userId'])) {
-        require 'footer.php';
-    }
+if (!isset($_SESSION)) {
+    session_start();
+}
+if (isset($_SESSION['userId'])) {
+    require 'footer.php';
+}
 ?>

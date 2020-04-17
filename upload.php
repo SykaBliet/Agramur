@@ -1,41 +1,41 @@
 <?php
 require 'header.php';
-
-if (isset($_SESSION['userId'])){
+if (isset($_SESSION['userId'])) {
     $filter_array = Array (
         'cigarette',
         'hat',
         'cap'
     );
-if (isset($_GET['filter']) && in_array($_GET['filter'], $filter_array)) {
-    $filter = $_GET['filter'];
-}
-?>
-<script src="upload.js"></script>
-<div>
-    <a id="download" class="select"><img src="https://img.icons8.com/bubbles/50/000000/download.png"></a>
-</div>
-<div>
-    <img id="uploaded" src="storage/tmp.png">
-</div>
-<?php
-    if(isset($_GET['filter'])) {
-        $disableTakePhoto = "button-photo";
-    } else {
-            $disableTakePhoto = "button-photo-off";
-        }
-    if(isset($filter)){
-?>
-        <img class="filterOnImage1" src="filter/<?=$filter?>.png" alt="">
-<?php
+    if (isset($_GET['filter']) && in_array($_GET['filter'], $filter_array)) {
+            $filter = $_GET['filter'];
     }
 ?>
-<div class="filters">
+    <script src="upload.js"></script>
+    <div>
+    <a id="download" class="select"><img src="https://img.icons8.com/bubbles/50/000000/download.png"></a>
+    </div>
+    <div>
+    <img id="uploaded" src="storage/tmp.png">
+    </div>
+    <?php
+    if(isset($_GET['filter'])) {
+        $disableTakePhoto = "button-photo";
+    } 
+    else {
+            $disableTakePhoto = "button-photo-off";
+    }
+    if(isset($filter)) {
+    ?>
+        <img class="filterOnImage1" src="filter/<?=$filter?>.png" alt="">
+    <?php
+    }
+    ?>
+    <div class="filters">
     <a href="upload.php?filter=cigarette"><img class="filter" id="cigarette" src="filter/cigarette.png" alt="cig filter"></a>
     <a href="upload.php?filter=hat"><img class="filter" id="hat" src="filter/hat.png" alt="hat filter"></a>
     <a href="upload.php?filter=cap"><img class="filter" id="cap" src="filter/cap.png" alt="cap filter"></a>
-</div>
-<div id="show-feed2">
+    </div>
+    <div id="show-feed2">
     <h2>Last Images Updated</h2>
     <?php
     require 'includes/dbh.inc.php';
@@ -50,10 +50,11 @@ if (isset($_GET['filter']) && in_array($_GET['filter'], $filter_array)) {
         </div>
     <?php
     }
-} else {
+}
+else {
     header ('Location: login.php');
 }
-    ?>
+?>
 </div>
 <?php
     require 'footer.php';

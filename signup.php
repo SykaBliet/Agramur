@@ -1,5 +1,5 @@
 <?php
-    require 'gallery.php';
+require 'gallery.php';
 ?>
 <head>
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
@@ -55,6 +55,6 @@
         </div>
     </main>
 </body>
-    <?php
-        require "footer.php";
-    ?>
+<?php
+require "footer.php";
+?>

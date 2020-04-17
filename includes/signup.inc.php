@@ -7,22 +7,14 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 //protection contre l'acces direct au signup
-
 if (isset($_POST['signup-submit'])) {
-    
-    //run connection au database
-
     require 'dbh.inc.php';
-
     //fetch info quand user s'inscrit
-
     $username = $_POST['uid'];
     $email = $_POST['mail'];
     $password = $_POST['pwd'];
     $passwordRepeat = $_POST['pwd-repeat'];
-
     // error handlers
-
     if (empty($username) || empty($email) || empty($password) || empty($passwordRepeat)) {
         header("Location: ../signup.php?error=emptyfields&uid=".$username."&mail=".$email);
         exit();
@@ -51,21 +43,17 @@ if (isset($_POST['signup-submit'])) {
         $sql = "SELECT uidUsers FROM users WHERE uidUsers='" . $username . "'";
         $stmt = $pdo->query($sql); //prepare ce qu'on a besoin dans notre db
         $row = $stmt->fetch();
-        
         if ($row > 0) {
             header("Location: ../signup.php?error=usernametaken&username=".$username);
             exit();
         }
-        
         $sql = "SELECT uidUsers FROM users WHERE emailUsers='" . $email . "'";
         $stmt = $pdo->query($sql); //prepare ce qu'on a besoin dans notre db
         $row = $stmt->fetch();
-
         if ($row > 0) {
             header("Location: ../signup.php?error=emailtaken&email=".$email);
             exit();
         }
-        
         else {
             //Insertion des infos tapper dans mysql
             $sql = "INSERT INTO users (uidUsers, emailUsers, pwdUsers, token) VALUES (?, ?, ?, ?)";

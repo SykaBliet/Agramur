@@ -27,6 +27,7 @@ body {
 .title-footer{
     color:white;
     font-size: 36px;
+    margin: 0;
 }
 
 .logo-img1 {
@@ -310,7 +311,7 @@ input[name="comment"]{
     display: inline-block;
     padding-bottom: 10px;
     list-style: none;
-    margin: 0 10px 0px 5px;
+    margin: 0 15px 0px 0px;
 }
 
 /* ---------- profil page ----------- */
@@ -557,7 +558,7 @@ input[name="comment"]{
 
 #upload-container {
     position: relative;
-    margin: 11% auto;
+    margin: 3% auto;
     height: 410px;
     width: 400px;
     background: rgba(238, 234, 234, 0.329);
@@ -595,5 +596,11 @@ input[name="comment"]{
     transform-origin: 0 100%;
     display: inline-block;
     line-height: 1em;
+  }
+
+  .like-number {
+    font-size: 18px;
+    margin-top: 12px;
+    position: absolute;
   }
 

@@ -57,7 +57,7 @@ if (isset($_SESSION['userId'])){
             // Content
             $mail->isHTML(true);        // Set email format to HTML
             $mail->Subject = 'Comment Notification';
-            $mail->Body    = '<p>'.$username.'commented on your photo</p>';
+            $mail->Body    = '<p>'.$username.' wrote a comment on your Picture! </p>';
             $mail->send();
         }
     }

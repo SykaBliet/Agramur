@@ -23,18 +23,18 @@ if (isset($_SESSION['userId'])) {
             <input type="hidden" name="photo" value="<?php echo $valuephoto; ?>">
             <input type="hidden" name="idUsers" value="<?php echo $user; ?>">
             <input type="hidden" name="uidUsers" value="<?php echo $_SESSION["uidUsers"]; ?>">
-            <button class="heart" name="like"><img src="https://img.icons8.com/color/48/000000/like.png"/></button><span class="like-number"><?= $row['liked'];?></span>
+            <button class="heart" name="like"><img src="https://img.icons8.com/color/48/000000/like.png" alt="heart-like"/></button><span class="like-number"><?= $row['liked'];?></span>
         </form>
         <?php
         $commentsql = "SELECT * FROM comments WHERE photo = '$valuephoto' order by dates ASC";
         $stmt = $pdo->query($commentsql);
         $row = $stmt->fetchAll();
-        echo '<h2 class="comment-title"> Comment Section</h2>';
+        echo '<h2 class="comment-title"> Comment </h2>';
         foreach ($row as $key => $value) {
         ?>
         <div class="comment">
-            <h4>By <?php echo $value['uidUsers'] ?></h4>
-            <p>Comment: <?php echo $value['comment']; ?> </p>
+            <h4 style="margin: 5px auto 0px auto;">By <?php echo $value['uidUsers'] ?></h4>
+            <p style="margin-top: 0;margin: 0;">Comment: <?php echo $value['comment']; ?> </p>
         </div>
         <?php
         }
@@ -54,7 +54,7 @@ if (isset($_SESSION['userId'])) {
 <?php
 }
 else {
-header ("Location: login.php");
+    header ("Location: login.php");
 }
 include 'footer.php'
 ?>

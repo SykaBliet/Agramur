@@ -12,10 +12,7 @@ if (isset($_SESSION['userId'])) {
 ?>
     <script src="upload.js"></script>
     <div>
-    <a id="download" class="select"><img src="https://img.icons8.com/bubbles/50/000000/download.png"></a>
-    </div>
-    <div>
-    <img id="uploaded" src="storage/tmp.png">
+        <img id="uploaded" src="storage/tmp.png">
     </div>
     <?php
     if(isset($_GET['filter'])) {
@@ -30,13 +27,16 @@ if (isset($_SESSION['userId'])) {
     <?php
     }
     ?>
+    <div>
+        <button id="download" class="select" style="Download: ;">Download</button>
+    </div>
     <div class="filters">
-    <a href="upload.php?filter=cigarette"><img class="filter" id="cigarette" src="filter/cigarette.png" alt="cig filter"></a>
-    <a href="upload.php?filter=hat"><img class="filter" id="hat" src="filter/hat.png" alt="hat filter"></a>
-    <a href="upload.php?filter=cap"><img class="filter" id="cap" src="filter/cap.png" alt="cap filter"></a>
+        <a href="upload.php?filter=cigarette"><img class="filter" id="cigarette" src="filter/cigarette.png" alt="cig filter"></a>
+        <a href="upload.php?filter=hat"><img class="filter" id="hat" src="filter/hat.png" alt="hat filter"></a>
+        <a href="upload.php?filter=cap"><img class="filter" id="cap" src="filter/cap.png" alt="cap filter"></a>    
     </div>
     <div id="show-feed2">
-    <h2>Last Images Updated</h2>
+        <h2>Last Images Updated</h2>
     <?php
     require 'includes/dbh.inc.php';
     $user = $_SESSION['userId'];

@@ -8,6 +8,7 @@
 </head>
 <body>
 <?php
+require 'gallery.php';
 if (isset($_GET['error']) == 'invalid') {
 ?>
     <div class="verified-text">
@@ -19,10 +20,11 @@ if (isset($_GET['error']) == 'invalid') {
 else {
     ?>
     <div class="verified-text">
-        <p>Please verify your email</p>
+        <h2>Please verify your email</h2>
         <button class="verified-button" onclick="window.location.href = 'login.php';">Login</button>
     </div>
 </body>
 <?php
 }
+require 'footer.php'
 ?>

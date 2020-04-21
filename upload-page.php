@@ -1,3 +1,4 @@
+<title>Upload</title>
 <?php
 require "header.php";
 if (isset($_SESSION['uidUsers'])) {
@@ -27,7 +28,7 @@ if (isset($_SESSION['uidUsers'])) {
         ?>
         <form class="picture" action="upload.inc.php" method="post" enctype="multipart/form-data">
             <input class="file" type="file" name="file">
-            <button class="gallery-button" type="submit" name="submit">submit</button>
+            <button class="login-button" type="submit" name="submit">submit</button>
         </form>
     </div>
 </div>

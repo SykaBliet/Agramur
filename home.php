@@ -10,8 +10,13 @@ if (isset($_SESSION['userId'])) {
     $stmt = $pdo->query($sql);
     $row = $stmt->fetchAll();
     foreach ($row as $key => $value) {
-    ?>  
+    ?>
     <div class="container-gallery">
+        <form action="delete.php" method="POST">
+            <input type="hidden" name="uidUsers" value="<?php echo $_SESSION['uidUsers']; ?>">
+            <input type="hidden" name="photo" value="<?php echo $value['photo']; ?>">
+            <button class="delete" name="delete"><img src="https://img.icons8.com/nolan/28/delete-sign.png"/></button>
+        </form>
         <img class="img-login" src="<?php echo $value['photo']; ?>" alt="">
         <?php
         $valuephoto = $value['photo'];
@@ -19,7 +24,7 @@ if (isset($_SESSION['userId'])) {
         $stmt = $pdo->query($likesql);
         $row = $stmt->fetch();
         ?>
-        <form action="like.php" method="post">
+        <form action="like.php" method="POST">
             <input type="hidden" name="photo" value="<?php echo $valuephoto; ?>">
             <input type="hidden" name="idUsers" value="<?php echo $user; ?>">
             <input type="hidden" name="uidUsers" value="<?php echo $_SESSION["uidUsers"]; ?>">
@@ -29,7 +34,9 @@ if (isset($_SESSION['userId'])) {
         $commentsql = "SELECT * FROM comments WHERE photo = '$valuephoto' order by dates ASC";
         $stmt = $pdo->query($commentsql);
         $row = $stmt->fetchAll();
-        echo '<h2 class="comment-title"> Comment </h2>';
+        ?>
+        <h2 class="comment-title"> Comment </h2>
+        <?php
         foreach ($row as $key => $value) {
         ?>
         <div class="comment">

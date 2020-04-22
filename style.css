@@ -646,3 +646,11 @@ input[name="comment"]{
   .container-item1 {
     margin-left: 30px;  
   }
+
+  .delete {
+    background-color: rgba(240, 132, 132, 0.575);
+    border: none;
+    position: absolute;
+    right: 0px;
+    border-radius: 10px;
+  }

@@ -7,6 +7,11 @@ require 'gallery.php';
     $sql = "SELECT * FROM userphotos WHERE photoid order by dates DESC";
     $stmt = $pdo->query($sql);
     $row = $stmt->fetchAll();
+    if (empty($row)) {
+        ?>
+            <h1>There is no photos uploaded yet</h1>
+        <?php
+    }
     foreach ($row as $key => $value) {
     ?>  
     <div class="container-gallery">

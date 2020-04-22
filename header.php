@@ -21,8 +21,12 @@ if (isset($_SESSION['userId'])) {
     <header>
         <nav class="nav-bar">
             <ul class="ul-navbar">
-                <a class="logo" href="index.php"><img class="logo-img1" src="img/logo-img1.png" alt="logo"></a>
-                <li class="li-navbar"><a href="profil.php">Profil</a></li>
+                <li class="logo">
+                    <a href="index.php"><img class="logo-img1" src="img/logo-img1.png" alt="logo"></a>
+                </li>
+                <li class="li-navbar">
+                    <a href="profil.php">Profil</a>
+                </li>
                 <li class="li-navbar"><a href="post-image.php">Post Image</a></li>
                 <li class="li-navbar"><a href="upload-page.php">Upload</a></li>
                 <li class="li-navbar-logout">

@@ -9,13 +9,18 @@ if (isset($_SESSION['userId'])) {
     $sql = "SELECT * FROM userphotos WHERE photoid order by dates DESC";
     $stmt = $pdo->query($sql);
     $row = $stmt->fetchAll();
+    if (empty($row)) {
+        ?>
+            <h1>There is no photos uploaded yet</h1>
+        <?php
+    }
     foreach ($row as $key => $value) {
     ?>
     <div class="container-gallery">
         <form action="delete.php" method="POST">
             <input type="hidden" name="uidUsers" value="<?php echo $_SESSION['uidUsers']; ?>">
             <input type="hidden" name="photo" value="<?php echo $value['photo']; ?>">
-            <button class="delete" name="delete"><img src="https://img.icons8.com/nolan/28/delete-sign.png"/></button>
+            <button class="delete" name="delete"><img src="https://img.icons8.com/emoji/32/000000/cross-mark-emoji.png"/></button>
         </form>
         <img class="img-login" src="<?php echo $value['photo']; ?>" alt="">
         <?php

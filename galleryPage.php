@@ -18,7 +18,7 @@ require 'gallery.php';
         <img class="img-login" src="<?php echo $value['photo']; ?>" alt="">
         <?php
         $valuephoto = $value['photo'];
-        $likesql = "SELECT * FROM userphotos WHERE photo = '$valuephoto' ";
+        $likesql = "SELECT * FROM userphotos WHERE photo='$valuephoto'";
         $stmt = $pdo->query($likesql);
         $row = $stmt->fetch();
         ?>

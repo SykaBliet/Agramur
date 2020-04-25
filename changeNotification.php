@@ -2,7 +2,7 @@
 require 'header.php';
 require 'includes/dbh.inc.php';
 
-if (isset($_SESSION['userId'])){
+if (isset($_SESSION['userId'])) {
 ?>
 <div class="container-login-form3">
     <div class="form-login">

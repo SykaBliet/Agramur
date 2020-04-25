@@ -91,7 +91,7 @@ if (isset($_POST['signup-submit'])) {
             // Content
             $mail->isHTML(true);                                  // Set email format to HTML
             $mail->Subject = 'Verify Email';
-            $mail->Body    = '<a href="'. $localhost .'/Agramur/confirm.php?token='. $token .'&email='. $email .'">VERIFY MY EMAIL ADRESSE</a>';
+            $mail->Body    = '<a href="'. $localhost .':81/Camagru/confirm.php?token='. $token .'&email='. $email .'">VERIFY MY EMAIL ADRESSE</a>';
 
             $mail->send();
 

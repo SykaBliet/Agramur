@@ -33,7 +33,7 @@ if (isset($_SESSION['userId'])) {
 	$filter = imagecreatefrompng("filter/".$filter_name.".png");
 	imagealphablending($filter, false);
 	imagesavealpha($filter, true);
-	if(isset($_POST['data'])){
+	if (isset($_POST['data'])) {
 		$encodedData = $_POST['data'];
 		$encodedData = str_replace('data:image/png;base64,', '', $encodedData);
 		$encodedData = str_replace(' ','+',$encodedData);

@@ -36,7 +36,7 @@ else {
     }
     elseif ($tokenCheck === true) {
         $tokenEmail = $row["pwdResetEmail"];
-        $sql = "SELECT * FROM users WHERE emailUser?;";
+        $sql = "SELECT * FROM users WHERE emailUsers=?;";
         $stmt = $pdo->prepare($sql);
         $stmt->bindValue(1, $tokenEmail);
         $stmt->execute();

@@ -3,7 +3,7 @@ require 'database.php';
 // CREATE DATABASE
 try {
     // Connect to Mysql server
-    $pdo = new PDO('mysql:host=127.0.0.1', $dBUsername, $dBPassword);
+    $pdo = new PDO('mysql:host=localhost;port=3307', $dBUsername, $dBPassword);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $sql = "CREATE DATABASE `".$dBName."`";
     $pdo->exec($sql);
@@ -24,7 +24,7 @@ try {
         `emailUsers` tinytext NOT NULL,
         `pwdUsers` longtext NOT NULL,
         `token` longtext NOT NULL,
-        `getMail` tinyint(4) NOT NULL
+        `getMail` tinyint(4) NULL
         )";
     $pdo->exec($sql);
     echo "Table users created successfully\n";
@@ -52,11 +52,11 @@ catch (PDOException $e) {
     echo "ERROR CREATING TABLE: ".$e->getMessage()."\nAborting process\n";
 }
 
-// CREATE TABLE pwdreset
+// CREATE TABLE pwdReset
 try {
     $pdo = new PDO('mysql:host=' . $servername . ';dbname=' . $dBName, $dBUsername, $dBPassword);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $sql = "CREATE TABLE `pwdreset` (
+    $sql = "CREATE TABLE `pwdReset` (
         `pwdResetId` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
         `pwdResetEmail` text NOT NULL,
         `pwdResetSelector` text NOT NULL,

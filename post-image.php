@@ -19,16 +19,17 @@ if (isset($_GET['filter']) && in_array($_GET['filter'], $filter_array)) {
         <?php
             if(isset($_GET['filter'])) {
                 $disableTakePhoto = "button-photo";
-            } else {
-                    $disableTakePhoto = "button-photo-off";
-                }
+            } 
+            else {
+                $disableTakePhoto = "button-photo-off";
+            }
         ?>
             <button class="<?= $disableTakePhoto ?>" id="startbutton">Take photo</button>
         <?php
-            if(isset($filter)){
+            if(isset($filter)) {
         ?>
-            <img class="filterOnImage" src="filter/<?=$filter?>.png" alt="">
-            <img class="filterOnImage2" src="filter/<?=$filter?>.png" alt="">
+                <img class="filterOnImage" src="filter/<?=$filter?>.png" alt="">
+                <img class="filterOnImage2" src="filter/<?=$filter?>.png" alt="">
         <?php
             }
         ?>

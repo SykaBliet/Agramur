@@ -1,11 +1,10 @@
 <?php
 require 'includes/dbh.inc.php';
-    $photo = $_POST["photo"];
-    $sql = "SELECT * FROM userphotos WHERE photo='" . $photo . "'";
-    $stmt = $pdo->query($sql);
-    $row = $stmt->fetch();
-    $user = $row['uidUsers'];
-
+$photo = $_POST["photo"];
+$sql = "SELECT * FROM userphotos WHERE photo='" . $photo . "'";
+$stmt = $pdo->query($sql);
+$row = $stmt->fetch();
+$user = $row['uidUsers'];
 if ($_POST['uidUsers'] === $user) {
     if(isset($_POST['delete'])){
         $sql = "DELETE FROM userphotos WHERE photo='" . $photo . "'";

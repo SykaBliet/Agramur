@@ -2,7 +2,7 @@
 session_start();
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
-if (isset($_SESSION['userId'])){
+if (isset($_SESSION['userId'])) {
     ini_set('display_errors', 1);
     require 'includes/dbh.inc.php';
     $localhost = 'http://localhost';

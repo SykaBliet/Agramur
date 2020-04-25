@@ -1,6 +1,5 @@
 <?php
 require 'includes/dbh.inc.php';
-
 if (isset($_GET['token']) && isset($_GET['email'])) {
     $sql = "SELECT * FROM users WHERE emailUsers=?";
     $stmt = $pdo->prepare($sql);

@@ -8,7 +8,7 @@ if(isset($_POST["like"])) {
     $sql = "SELECT * FROM likes WHERE idUsers='" . $id . "' AND uidUsers='" . $username . "' AND photo='" . $photo . "' ";
     $stmt = $pdo->query($sql);
     $row = $stmt->fetch();
-    if (empty($row)){
+    if (empty($row)) {
         $sql = "INSERT INTO likes (idUsers, uidUsers, photo, liked) VALUES (?, ?, ?, liked + 1)";
         $stmt = $pdo->prepare($sql);
         $stmt->bindValue(1, $id);

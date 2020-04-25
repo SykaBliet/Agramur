@@ -1,9 +1,7 @@
 <?php
 $selector = $_GET["selector"];
 $validator = $_GET["validator"];
-
-if (empty($selector || empty($validator)))
-{
+if (empty($selector || empty($validator))) {
     echo "Could not validate your request";
 }
 else {

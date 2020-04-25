@@ -22,7 +22,7 @@ require 'gallery.php';
         $stmt = $pdo->query($likesql);
         $row = $stmt->fetch();
         ?>
-        <form action="like.php" method="post">
+        <form action="#" method="post">
             <button class="heart" name="like"><img src="https://img.icons8.com/color/48/000000/like.png"/></button><span class="like-number"><?= $row['liked'];?></span>
         </form>
         <?php
@@ -34,7 +34,7 @@ require 'gallery.php';
         ?>
         <div class="comment">
             <h4>By <?php echo $value['uidUsers'] ?></h4>
-            <p>Comment: <?php echo $value['comment']; ?> </p>
+            <p>Comment: <?php echo htmlentities($value['comment']) ?> </p>
         </div>
         <?php
         }

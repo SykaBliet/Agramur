@@ -46,7 +46,7 @@ if (isset($_SESSION['userId'])) {
         ?>
         <div class="comment">
             <h4 style="margin: 5px auto 0px auto;">By <?php echo $value['uidUsers'] ?></h4>
-            <p style="margin-top: 0;margin: 0;">Comment: <?php echo $value['comment']; ?> </p>
+            <p style="margin-top: 0;margin: 0;">Comment: <?php echo htmlentities($value['comment']); ?> </p>
         </div>
         <?php
         }

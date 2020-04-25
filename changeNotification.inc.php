@@ -1,10 +1,9 @@
 <?php
 require 'includes/dbh.inc.php';
-
 if (!isset($_SESSION)) {
     session_start();
 }
-if (isset($_SESSION['uidUsers'])){
+if (isset($_SESSION['uidUsers'])) {
     $sql = "SELECT getMail FROM users WHERE uidUsers='".$_SESSION['uidUsers']."'";
     $stmt = $pdo->query($sql);
     $row = $stmt->fetch();

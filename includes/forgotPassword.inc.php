@@ -63,9 +63,11 @@ if (isset($_POST['reset-submit'])) {
         // Content
         $mail->isHTML(true);                                  // Set email format to HTML
         $mail->Subject = 'Reset Password';
+        $url = explode('/', trim($_SERVER['REQUEST_URI'], '/'));
+        $url2 = $url[0];
         $mail->Body    = '
         <p>This is your reset password link</p>
-        <a href="'. $localhost .'/Agramur/typeNewPassword.php?selector='. $selector .'&validator='. bin2hex($token) .'">Change my Password!</a>';
+        <a href="'. $localhost .':'.$_SERVER['SERVER_PORT'].'/'.$url2.'/typeNewPassword.php?selector='. $selector .'&validator='. bin2hex($token) .'">Change my Password!</a>';
         
         $mail->send();
 

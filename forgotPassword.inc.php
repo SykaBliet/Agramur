@@ -62,7 +62,9 @@ if (isset($_POST['reset-submit'])) {
             // Content
             $mail->isHTML(true);                               // Set email format to HTML
             $mail->Subject = 'Verify Email';
-            $mail->Body    = '<a href="'. $localhost .':81/Camagru/confirm.php?token='. $token .'&email='. $email .'">VERIFY MY EMAIL ADRESSE</a>';
+            $url = explode('/', trim($_SERVER['REQUEST_URI'], '/'));
+            $url2 = $url[0];
+            $mail->Body    = '<a href="'. $localhost .'/"'.$url2.'"/confirm.php?token='. $token .'&email='. $email .'">VERIFY MY EMAIL ADRESSE</a>';
             $mail->send();
             //sendVerification($email, $token, $mail);
             header("Location: forgotPassword.php");

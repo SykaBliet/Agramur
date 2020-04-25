@@ -3,7 +3,7 @@ require 'database.php';
 // CREATE DATABASE
 try {
     // Connect to Mysql server
-    $pdo = new PDO('mysql:host=localhost;port=3307', $dBUsername, $dBPassword);
+    $pdo = new PDO('mysql:host=localhost', $dBUsername, $dBPassword);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $sql = "CREATE DATABASE `".$dBName."`";
     $pdo->exec($sql);
@@ -43,7 +43,7 @@ try {
         `uidUsers` text NOT NULL,
         `photo` text NOT NULL,
         `dates` datetime DEFAULT NULL,
-        `liked` int(11) NOT NULL
+        `liked` int(11) DEFAULT 0
         )";
     $pdo->exec($sql);
     echo "Table userphotos created successfully\n";

@@ -1,6 +1,7 @@
 <?php
 $servername = "localhost";
 $dBUsername = "root";
-$dBPassword = "aurele";
+$dBPassword = "";
 $dBName = "db";
+$dBport = ";port=3306";
 ?>

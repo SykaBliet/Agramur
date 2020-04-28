@@ -45,10 +45,10 @@ require 'gallery.php';
                         echo '<p class="signup-succes-msg">Sign up successful</p>'; 
                     }
                     ?>
-                    <input type="text" name="uid" placeholder="Username">
-                    <input type="text" name="mail" placeholder="E-mail">
-                    <input type="password" name="pwd" placeholder="Password">
-                    <input type="password" name="pwd-repeat" placeholder="Repeat password">
+                    <input type="text" name="uid" placeholder="Username" minlength="8" required>
+                    <input type="text" name="mail" placeholder="E-mail" required>
+                    <input type="password" name="pwd" placeholder="Password" minlength="8" required>
+                    <input type="password" name="pwd-repeat" placeholder="Repeat password" required>
                     <button class="signup-button" type="submit" name="signup-submit">Sign Up</button>
                 </form>
             </section>

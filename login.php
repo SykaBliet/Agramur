@@ -24,12 +24,15 @@
         if (isset($_GET["newpwd"]) == "passwordupdated") {
             echo '<p class="signup-succes-msg">Your password has been reset !</p>';
         }
+        elseif (isset($_GET["like"]) == "loginfirst") {
+            echo '<p class="signup-succes-msg">To like a picture login first</p>';
+        }
         ?>
         <div class="container-login-form">
             <form class="form-login" action="includes/login.inc.php" method="post"> 
                 <h1 class="login-title">Camagru</h1>
-                <input type="text" name="mailuid" placeholder="Username/E-mail...">
-                <input type="password" name="pwd" placeholder="Password">
+                <input type="text" name="mailuid" placeholder="Username/E-mail..." required>
+                <input type="password" name="pwd" placeholder="Password" required>
                 <button class="login-button" type="submit" name="login-submit">Login</button>
                 <a class="forgot-pass" href="forgotPassword.php">Forgot Password ?</a>
                 <div class="signup-block">

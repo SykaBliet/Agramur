@@ -9,7 +9,7 @@ require 'gallery.php';
     $row = $stmt->fetchAll();
     if (empty($row)) {
         ?>
-            <h1>There is no photos uploaded yet</h1>
+        <h1>There is no photos uploaded yet</h1>
         <?php
     }
     foreach ($row as $key => $value) {
@@ -22,8 +22,8 @@ require 'gallery.php';
         $stmt = $pdo->query($likesql);
         $row = $stmt->fetch();
         ?>
-        <form action="#" method="post">
-            <button class="heart" name="like"><img src="https://img.icons8.com/color/48/000000/like.png"/></button><span class="like-number"><?= $row['liked'];?></span>
+        <form action="login.php?like=loginfirst">
+            <button class="heart" name="like" type="submit"><img src="https://img.icons8.com/color/48/000000/like.png"/></button><span class="like-number"><?= $row['liked'];?></span>
         </form>
         <?php
         $commentsql = "SELECT * FROM comments WHERE photo = '$valuephoto' order by dates ASC";

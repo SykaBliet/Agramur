@@ -12,8 +12,8 @@ else {
         <form action="reset-password.php" method="post">
             <input type="hidden" name="selector" value="<?php echo $selector ?>">
             <input type="hidden" name="validator" value="<?php echo $validator ?>">
-            <input type="password" name="pwd" placeholder="Enter a New Password">
-            <input type="password" name="pwd-repeat" placeholder="Repeat Password">
+            <input type="password" name="pwd" placeholder="Enter a New Password" require>
+            <input type="password" name="pwd-repeat" placeholder="Repeat Password" require>
             <button type="submit" name ="reset-password-submit">Confirm</button>
         </form>
         <?php

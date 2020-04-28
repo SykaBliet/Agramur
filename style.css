@@ -300,6 +300,12 @@ input[name="comment"]{
     text-align: center;
     color: green;
 }
+
+.signup-succes-msg {
+    text-align:center;
+    color: white;
+    font-size: 26px;
+}
 /* -----------------  forgot-pass ------------------ */
 .forgot-pass {
     margin-top: 15px;

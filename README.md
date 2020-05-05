@@ -21,3 +21,9 @@ Here were the challenges:
   -COMMENT and LIKE sections with E-mailing notifications.
   
   Here is a link to the Subject: https://cdn.intra.42.fr/pdf/pdf/3994/camagru.en.pdf
+
+  How does it work ? 
+1) Launch a web server or a open-source cross-platform web server like XAMPP (clone project in xampp/htdocs/).
+2) Setup the database by launching localhost/<ProjectDir>/config/setup.php
+3) Enjoy !
+  

@@ -44,5 +44,5 @@ If your not happy with your photos, no worries, you can delete it by a simple cl
 
 Checkout my github for more cool projects !
 
-I'm always looking for new great projects add my on Linkedin :)
+I'm always looking for new great projects add me on Linkedin :)
   

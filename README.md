@@ -22,13 +22,15 @@ Here were the challenges:
   
   Here is a link to the Subject: https://cdn.intra.42.fr/pdf/pdf/3994/camagru.en.pdf
 
-How does it work ? 
+How does it work ?
+
 1) Launch a web server or a open-source cross-platform web server like XAMPP (clone project in xampp/htdocs/).
 2) On XAMPP dashboard launch APACHE and MySql modules.
 3) Setup the database by launching on your url localhost/Agramur/config/setup.php (Agramur can be changed by the name that you gived to you repository)
 4) Enjoy !
 
 When Launched :
+
 1) Signup
 2) Verify email confirmation
 3) Login

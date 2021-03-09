@@ -34,7 +34,7 @@ When Launched :
 3) Login
 4) Enjoy Even more !
 
-What can i do ? 
+What can i do ?
 Plenty of things of wonderfull things ! Like taking a selfie, on the "POST IMAGE" page, with the 3 "filters" available.(dont forget to pick one :D) 
 Then save it to your profil by pressing the button download! You will be able to see all the latest images on the right side of the page. 
 You can also upload a picture directly to your profil on the "UPLOAD" page. Check all your profil details on the "PROFIL" page, you can change your bio or turnON notifications (if you don't have enough of them :p ).
